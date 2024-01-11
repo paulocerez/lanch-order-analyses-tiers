@@ -19,7 +19,7 @@ tier_order_counts = df_orders_per_vendor.groupby('City Tier')['Order ID'].count(
 # Population per City
 population_per_city = df_city.set_index('Name')['2022']
 
-# Avg. Order Volume per Resident
-avg_order_volume_per_resident = city_order_counts / population_per_city
+# Avg. Order Volume per Resident per City
+city_avg_order_volume_per_resident = (city_order_counts / population_per_city).dropna()
 
-print(city_order_counts)
+# print(avg_order_volume_per_resident)
