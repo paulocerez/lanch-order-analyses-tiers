@@ -1,0 +1,11 @@
+Descriptive Analysis:
+    Grouping/Aggregation -> No. of orders/city
+    Variance in order volume across different cities
+
+Grouping/Aggregation:
+    relative order volume -> order volume per city/total order volume (each city share of total order volume)
+
+Temporal Analysis:
+    changes of relative order volume per city over time
+
+Segmentation Analysis?

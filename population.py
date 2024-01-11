@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def categorize_city(number_of_residents):
     if number_of_residents > 1000000:
         return 'Tier 1'
@@ -19,4 +18,4 @@ df_city['2022'] = df_city['2022'].str.replace('.', '')
 
 df_city['2022'] = pd.to_numeric(df_city['2022'], errors='coerce')
 df_city['city_tier'] = df_city['2022'].apply(categorize_city)
-print(df_city.head(20))
+# print(df_city.head(20))
