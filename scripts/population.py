@@ -11,7 +11,7 @@ def categorize_city(number_of_residents):
         return 'Tier 4'
     
 # skipping rows that have a different number of fields (columns) than expected
-df_city = pd.read_csv('population.csv', delimiter=",", on_bad_lines='skip')
+df_city = pd.read_csv('../data/population.csv', delimiter=",", on_bad_lines='skip')
 
 df_city = df_city[['Name', '2022', 'Bundesland']]
 df_city['2022'] = df_city['2022'].str.replace('.', '')

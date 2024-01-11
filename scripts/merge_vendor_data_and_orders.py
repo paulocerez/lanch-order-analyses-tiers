@@ -1,7 +1,7 @@
 import pandas as pd
 from assign_clusters import df_merged
 
-df_orders = pd.read_csv('food_orders.csv', delimiter=",", low_memory=False)
+df_orders = pd.read_csv('../data/food_orders.csv', delimiter=",", low_memory=False)
 df_orders_subset = df_orders[['Vendor ID','Vendor Name','Order ID','Ordered At','Vendor Region','Brand','Order Source Name','Order Source Type', 'Fulfilment Type', 'Gmv', 'Rating Food', 'Rating Delivery', 'Vouchers Total Value Gross']]
 
 df_orders_per_vendor = pd.merge(df_merged, df_orders_subset, on='Vendor ID')

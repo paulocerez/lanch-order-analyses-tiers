@@ -1,7 +1,7 @@
 import pandas as pd
 from population import df_city
 
-df_vendor = pd.read_csv('vendors.csv', delimiter=",", low_memory=False)
+df_vendor = pd.read_csv('../data/vendors.csv', delimiter=",", low_memory=False)
 df_vendor_subset = df_vendor[['Vendor ID', 'Vendor Name Platform', 'Brand', 'City', 'Region', 'Legal Entity Name']]
 
 df_city = df_city.rename(columns={'2022': 'Population', 'Name': 'Vendor_City'})
