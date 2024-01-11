@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib as mpl
+import pandas as pd
 
 from merge_vendor_data_and_orders import df_orders_per_vendor
 from population import df_city
@@ -13,9 +14,6 @@ city_order_counts = (df_orders_per_vendor.groupby('Vendor_City')['Order ID'].cou
 # No. of vendors per city
 vendor_counts = df_orders_per_vendor.groupby('Vendor_City')['Vendor ID'].nunique()
 
-# No. of orders per cluster
-tier_order_counts = df_orders_per_vendor.groupby('City Tier')['Order ID'].count()
-
 # Population per City
 population_per_city = df_city.set_index('Name')['2022']
 0
@@ -25,10 +23,15 @@ city_avg_order_volume_per_resident = (city_order_counts / population_per_city).d
 # Avg. No. of Partners per City
 vendor_counts = df_orders_per_vendor.groupby('Vendor_City')['Vendor ID'].nunique()
 
-# No. of different fulfilment types per cluster
-total_no_own_delivery = df_orders_per_vendor.groupby('Fulfilment Type')['Order ID'].count()
+# Generate CSV
 
-# Avg. rating of fulfilment types per cluster
-avg_rating_per_fulfilment_type = df_orders_per_vendor.groupby(['Fulfilment Type', 'City Tier'])['Average Rating'].mean()
+df_city_metrics = pd.DataFrame({
+    'No. of orders per city': city_order_counts,
+    'No. of vendors per city': vendor_counts,
+    'Population per city': population_per_city,
+    'Avg. Order Volume per Resident per City': city_avg_order_volume_per_resident,
+    'Avg. No. of Partners per City': vendor_counts
+})
 
-print(avg_rating_per_fulfilment_type)
+df_city_metrics.reset_index(inplace=True)
+df_city_metrics.to_csv('city_metrics.csv', index=False)

@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from averages import avg_gmv_per_order_per_tier, total_gmv_per_tier, total_orders_per_tier
+from scripts.tiers import avg_gmv_per_order_per_tier, total_gmv_per_tier, total_orders_per_tier
 
 x_values_tiers = avg_gmv_per_order_per_tier.index.tolist()
 avg_gmv = avg_gmv_per_order_per_tier.values.tolist()
