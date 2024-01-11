@@ -5,8 +5,8 @@ df_orders = pd.read_csv('../data/food_orders.csv', delimiter=",", low_memory=Fal
 df_orders_subset = df_orders[['Vendor ID','Vendor Name','Order ID','Ordered At','Vendor Region','Brand','Order Source Name','Order Source Type', 'Fulfilment Type', 'Gmv', 'Rating Food', 'Rating Delivery', 'Vouchers Total Value Gross']]
 
 df_orders_per_vendor = pd.merge(df_merged, df_orders_subset, on='Vendor ID')
+df_orders_per_vendor["Average Rating"] = (df_orders_per_vendor['Rating Food']+df_orders_per_vendor["Rating Delivery"]) / 2
 # inplace=True -> modify original df, axis=1 -> column (row -> axis=0)
-# print(df_orders_per_vendor.head())
 # print(df_orders_per_vendor['Ordered At'].head())
 # print(df_orders_per_vendor.columns.tolist())
 
