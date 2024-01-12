@@ -12,4 +12,4 @@ df_merged = pd.merge(df_city, df_vendor_subset, left_on='Vendor_City', right_on=
 # df_merged.drop('City', axis=1, inplace=True)
 
 # print(df_merged['Population'].isna().any())
-# print(df_merged.head(5))
+print(df_merged.head(5))

@@ -18,4 +18,4 @@ df_city['2022'] = df_city['2022'].str.replace('.', '')
 
 df_city['2022'] = pd.to_numeric(df_city['2022'], errors='coerce')
 df_city['City Tier'] = df_city['2022'].apply(categorize_city)
-# print(df_city.head(20))
+# print(df_city)
