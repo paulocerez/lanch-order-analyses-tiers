@@ -8,8 +8,12 @@ Run three files in the scripts folder to calculate metrics and insert the result
 - tiers.py -> Tier*-related metrics
 - overall.py -> Overall metrics
 
-All of these metrics are order-performance-related.
+All of these metrics are order and performance related.
 * Tiers are categorized per population size in the cities. See the logic in population.py
+
+#### How to run a file
+    python3 filename.py
+
 
 ### **City Metrics:**
 
@@ -31,7 +35,7 @@ All of these metrics are order-performance-related.
 - `No. of orders per cluster (tier_order_counts)` → total no. of orders placed per tier
 - `No. of different fulfilment types per cluster (total_no_own_delivery)` → total no. of different fulfilment types used per tier
 - `Avg. rating of fulfilment types per cluster (avg_rating_per_fulfilment_type)` → avg. rating of fulfilment types per tier
-- `Avg. GMV (avg_gmv_per_order_per_tier)` → avg. GMV per order per tier
+- `Avg. AOV (avg_gmv_per_order_per_tier)` → avg. AOV per order per tier
 - `Total GMV (total_gmv_per_tier)` → total GMV per tier
 - `Total Order Volume (total_orders_per_tier)` → total volume of orders per tier
 - `Total Population per Tier (total_population_per_tier)` → population size per tier

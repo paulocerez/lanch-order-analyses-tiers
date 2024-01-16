@@ -1,17 +1,17 @@
 import matplotlib.pyplot as plt
-from scripts.tiers import avg_gmv_per_order_per_tier, total_gmv_per_tier, total_orders_per_tier
+from scripts.tiers import avg_aov_per_order_per_tier, total_gmv_per_tier, total_orders_per_tier
 
-x_values_tiers = avg_gmv_per_order_per_tier.index.tolist()
-avg_gmv = avg_gmv_per_order_per_tier.values.tolist()
+x_values_tiers = avg_aov_per_order_per_tier.index.tolist()
+avg_aov = avg_aov_per_order_per_tier.values.tolist()
 total_gmv = total_gmv_per_tier.tolist()
 total_orders = total_orders_per_tier.tolist()
 
 fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1)
 
-# Plot Average GMV per Order
-bars1 = ax1.bar(x_values_tiers, avg_gmv)
+# Plot AOV
+bars1 = ax1.bar(x_values_tiers, avg_aov)
 ax1.set_xlabel('City Tier')
-ax1.set_ylabel('Average GMV per Order')
+ax1.set_ylabel('AOV')
 for bar in bars1:
     yval = bar.get_height()
     ax1.text(bar.get_x() + bar.get_width()/2.0, yval, round(yval, 2), va='bottom')

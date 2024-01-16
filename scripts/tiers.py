@@ -11,7 +11,7 @@ from population import df_city
 tier_order_counts = df_orders_per_vendor.groupby('City Tier')['Order ID'].count()
 
 # Avg. GMV per Tier
-avg_gmv_per_order_per_tier = df_orders_per_vendor.groupby('City Tier')['Gmv'].mean()
+avg_aov_per_order_per_tier = df_orders_per_vendor.groupby('City Tier')['Gmv'].mean()
 
 # Total GMV per Tier
 total_gmv_per_tier = df_orders_per_vendor.groupby('City Tier')['Gmv'].sum()
@@ -44,7 +44,7 @@ avg_no_orders_per_vendor_per_tier = total_orders_per_tier / count_vendors_per_ti
 # Combine all metrics into a single DataFrame
 df_metrics = pd.DataFrame({
     'No. of orders per Tier': tier_order_counts,
-    'Avg. GMV per Tier': avg_gmv_per_order_per_tier,
+    'Avg. AOV per Tier': avg_aov_per_order_per_tier,
     'Total GMV per Tier': total_gmv_per_tier,
     'Total Order Volume per Tier': total_orders_per_tier,
     'Total Population per Tier': total_population_per_tier,
