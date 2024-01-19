@@ -1,5 +1,3 @@
-# These are just helpers for the calculations in other sheets
-
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib as mpl
