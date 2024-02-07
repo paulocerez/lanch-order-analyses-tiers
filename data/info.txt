@@ -1,0 +1,1 @@
+This folder doesn't contain raw data. For the scripts to work, I provided the general CSV structure per CSV file. The population data is publicly available on Wikipedia, therefore it's also included in the repo in the raw shape.

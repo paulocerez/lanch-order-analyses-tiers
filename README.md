@@ -1,18 +1,12 @@
 ### How to run these analyses
 
-Upload data sources to the data folder -> Expected input: Three CSV's containing food order data, population data, list of unique vendors.
+Upload data sources to the data folder -> Expected input: A CSV containing food order data and one containing unique vendors.
 
-Run three files in the scripts folder to calculate metrics and insert the results into csv sheets.
+All of the calculated metrics are order and performance related.
+* Tiers are categorized per population size in the cities. See logic in the first cell of analytics.ipynb.
 
-- cities.py -> City-related metrics
-- tiers.py -> Tier*-related metrics
-- overall.py -> Overall metrics
-
-All of these metrics are order and performance related.
-* Tiers are categorized per population size in the cities. See the logic in population.py
-
-#### How to run a file
-    python3 filename.py
+#### How to run the Jupyter Notebook
+Run all cells in analytics.ipynb -> This calculates the metrics in separated cells and inserts the outcomes into different CSV's that can be used for further visualizations or analyses.
 
 
 ### **City Metrics:**
